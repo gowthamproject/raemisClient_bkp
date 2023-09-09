@@ -1,0 +1,36 @@
+/usr/lib/jvm/java-1.11.0-openjdk-amd64/bin/java -javaagent:/home/test/idea-IC-232.9559.62/lib/idea_rt.jar=39129:/home/test/idea-IC-232.9559.62/bin -Dfile.encoding=UTF-8 -classpath /home/test/git-repo/ClientAPI_1/target/classes:/home/test/.m2/repository/com/sun/jersey/jersey-client/1.19.4/jersey-client-1.19.4.jar:/home/test/.m2/repository/com/sun/jersey/jersey-core/1.19.4/jersey-core-1.19.4.jar:/home/test/.m2/repository/com/sun/jersey/jersey-bundle/1.9.1/jersey-bundle-1.9.1.jar:/home/test/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/home/test/.m2/repository/com/microsoft/sqlserver/mssql-jdbc/12.4.0.jre11/mssql-jdbc-12.4.0.jre11.jar:/home/test/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar:/home/test/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.5.3/jackson-databind-2.5.3.jar:/home/test/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.5.0/jackson-annotations-2.5.0.jar:/home/test/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.5.3/jackson-core-2.5.3.jar com.wipro.raemisclient.Main -Djavax.net.debug=all
+javax.net.ssl.SSLHandshakeException: Failed to parse server certificates
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:131)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:360)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:303)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1320)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.onConsumeCertificate(CertificateMessage.java:1232)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.consume(CertificateMessage.java:1175)
+	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:392)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:443)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:421)
+	at java.base/sun.security.ssl.TransportContext.dispatch(TransportContext.java:183)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:172)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1511)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1421)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:456)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:427)
+	at java.base/sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:572)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:201)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:246)
+	at com.wipro.raemisclient.session.HTTPSessionManager.createSession(HTTPSessionManager.java:39)
+	at com.wipro.raemisclient.Main.main(Main.java:29)
+Caused by: java.security.cert.CertificateParsingException: no more data allowed for version 1 certificate
+	at java.base/sun.security.x509.X509CertInfo.parse(X509CertInfo.java:679)
+	at java.base/sun.security.x509.X509CertInfo.<init>(X509CertInfo.java:169)
+	at java.base/sun.security.x509.X509CertImpl.parse(X509CertImpl.java:1842)
+	at java.base/sun.security.x509.X509CertImpl.<init>(X509CertImpl.java:194)
+	at java.base/sun.security.provider.X509Factory.engineGenerateCertificate(X509Factory.java:105)
+	at java.base/java.security.cert.CertificateFactory.generateCertificate(CertificateFactory.java:355)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1316)
+	... 18 more
+Exception occur while creating the HTTPSession:javax.net.ssl.SSLHandshakeException: Failed to parse server certificates
+
+Process finished with exit code 0
